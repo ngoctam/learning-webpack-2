@@ -1,2 +1,7 @@
 const sum = (a, b) => a + b;
-module.exports = sum;
+
+// CommonJS
+// module.exports = sum;
+
+// ES2015
+export default sum;
