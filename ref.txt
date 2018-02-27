@@ -1,0 +1,16 @@
+Why use Webpack?
+- Webpack is build tool for single page app.
+- Working on small many files and build to large file for publish.
+- Performance loading many files
+
+=> Merge all small many files to bundle file.
+
+*** js_modules
+    npm init -> create package.json
+    create sum.js and index.js
+    npm install --save-dev webpack@2.2.0-rc.0 -> install webpack
+    create webpack.config.js
+    
+    run: 
+        webpack
+        npm run build (check scripts in package.json)
