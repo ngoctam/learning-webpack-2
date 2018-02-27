@@ -14,3 +14,15 @@ Why use Webpack?
     run: 
         webpack
         npm run build (check scripts in package.json)
+        
+    Watchmode:
+        webpack --watch
+        
+        or:        
+            module.exports = {
+              entry: "./app.js",
+              output: {
+                filename: "bundle.js"
+              },
+              watch: true
+            }
