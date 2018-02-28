@@ -4,5 +4,5 @@ import '../styles/image_viewer.css';
 export default () => {
     const image = document.createElement('img');
     image.src = small;
-    document.body.appendChild(bigImage);
+    document.body.appendChild(image);
 }

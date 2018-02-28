@@ -13,6 +13,7 @@ button.innerText = 'Click me';
 button.onclick = () => {
     System.import('./image_viewer_2').then(module => {
         console.log(module);
+        module.default();
     });
 };
 
