@@ -1,7 +1,7 @@
 Why use Webpack?
-- Webpack is build tool for single page app.
-- Working on small many files and build to large file for publish.
-- Performance loading many files
+    - Webpack is build tool for single page app.
+    - Working on small many files and build to large file for publish.
+    - Performance loading many files
 
 => Merge all small many files to bundle file.
 
@@ -132,3 +132,33 @@ Why use Webpack?
             },
 
         run 'npm run serve'
+
+    React Router with Codesplitting:
+        Check componentRoutes in router.js
+
+    Getting Production Ready
+        "scripts": {
+            "clean": "rimraf dist",
+            "build": "NODE_ENV=production npm run clean && webpack -p",
+            "serve": "webpack-dev-server"
+        }
+
+        plugins: [
+            new webpack.DefinePlugin({
+            'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+            })
+        ]
+
+        npm install -g win-node-env
+
+    Deployment with Surge:
+        npm install -g surge
+        npm run build
+        surge -p dist
+        -> http://dead-insect.surge.sh/#/
+
+    Deployment with Github Pages: https://<username>.github.io/<RepoName>
+        Create new repository
+        git remote ...
+        git checkout -b gh-pages
+        git subtree push --prefix dist origin gh-pages
