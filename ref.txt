@@ -101,3 +101,23 @@ Why use Webpack?
                     template: 'src/index.html'
                 })
             ]
+    
+    Chunk Hashing for Cache Busting:
+        output: {
+            path: path.join(__dirname, 'dist'),
+            filename: '[name].[chunkhash].js' // noted
+        }
+        plugins: [
+            new webpack.optimize.CommonsChunkPlugin({
+                names: ['vendor', 'manifest'] // noted
+            })
+        ]
+    
+    Cleaning Project Files: npm install --save-dev rimraf
+        package.json
+            "scripts": {
+                "clean": "rimraf dist",
+                "build": "npm run clean && webpack"
+            },
+
+        use 'npm run build' instead of 'webpack'
