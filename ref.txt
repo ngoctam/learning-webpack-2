@@ -44,3 +44,30 @@ Why use Webpack?
         npm install --save-dev style-loader css-loader
 
         npm install --save-dev extract-text-webpack-plugin@2.0.0-beta.4
+
+
+    Handling Images with Webpack: 
+        npm install --save-dev image-webpack-loader url-loader
+
+*** WebpackProject: https://github.com/StephenGrider/WebpackProject
+    npm install
+
+    Setting Babel & Minimum Webpack Config:
+        webpack.config.js
+            module: { // Webpack 2, loaders -> Webpack 2
+                rules: [
+                    {
+                        use: 'babel-loader',
+                        test: /\.js$/,
+                        exclude: /node_modules/
+                    }
+                ]
+            }
+        
+        .babelrc
+            {
+                "presets": [
+                    "babel-preset-env",
+                    "react"
+                ]
+            }
