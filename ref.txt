@@ -164,6 +164,7 @@ Why use Webpack?
 
         publish:
             git subtree push --prefix dist origin gh-pages
+            
             or
                 "scripts": {
                     "clean": "rimraf dist",
@@ -173,3 +174,9 @@ Why use Webpack?
                 },
 
                 and: 'npm run deploy'
+    
+    Deployment with AWS S3:
+        npm install -g s3-website
+        create .env and API key
+        s3-website create webpack-deploy
+        s3-website deploy dist
