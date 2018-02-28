@@ -71,3 +71,33 @@ Why use Webpack?
                     "react"
                 ]
             }
+
+    Vendor Asset Caching
+        webpack.config.js
+            module.exports = {
+                entry: {
+                    bundle: './src/index.js',            // note
+                    vendor: VENDOR_LIBS                  // note
+                },
+                output: {
+                    path: path.join(__dirname, 'dist'),
+                    filename: '[name].js'                    // note
+                },
+            }
+
+    Code Splitting: solve duplicate in bundle.js and vendor.js
+        webpack.config.js
+            plugins: [
+                new webpack.optimize.CommonsChunkPlugin({
+                    name: 'vendor'
+                }),
+            ]
+
+    Troubleshooting Vendor Bundles: Uncaught ReferenceError: webpackJsonp is not defined    
+        Use html-webpack-plugin: npm install --save-dev html-webpack-plugin
+        webpack.config.js
+            plugins: [
+                new HtmlWebpackPlugin({
+                    template: 'src/index.html'
+                })
+            ]
