@@ -26,3 +26,21 @@ Why use Webpack?
               },
               watch: true
             }
+
+    Introduction to Loaders:
+        Module loaders are used to do some preprocessing on files before they are added to our bundle.js file
+        Loaders are commonly used to implement transpiling for ES2015 code, so like the use Babel if you ever worked with or heard of Babel before
+
+        Babel is used for transpiling JavaScript ES2015 to ES5 code, Babel has support for many different build systems
+        3 Modules: 
+            babel-loader: Teaches babel how to work with webpack 
+            babel-core: Knows how to take in code, parse it, and generate some output files
+            babel-preset-env: Ruleset for telling babel exactly what pieces of ES2015/6/7 syntax to look for and how to turn it into ES5 code
+
+        Install Babel: npm install --save-dev babel-loader babel-core babel-preset-env
+
+        css-loader: Knows how to deal with CSS imports
+        style-loader: Takes CSS imports and adds them to the HTML document
+        npm install --save-dev style-loader css-loader
+
+        npm install --save-dev extract-text-webpack-plugin@2.0.0-beta.4
