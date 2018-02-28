@@ -120,4 +120,15 @@ Why use Webpack?
                 "build": "npm run clean && webpack"
             },
 
-        use 'npm run build' instead of 'webpack'
+        use 'npm run clean' to clean all files in dist folder
+        build with 'npm run build' instead of 'webpack'
+
+    Webpack Dev Server: npm install --save-dev webpack-dev-server@2.2.0-rc.0
+        package.json
+            "scripts": {
+                "clean": "rimraf dist",
+                "build": "npm run clean && webpack",
+                "serve": "webpack-dev-server"
+            },
+
+        run 'npm run serve'
